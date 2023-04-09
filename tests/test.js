@@ -7,7 +7,7 @@ async function test() {
     await driver.get("http://google.com");
     await driver.findElement(By.name("q")).sendKeys(searchString, Key.RETURN);
     const title = await driver.getTitle();
-    console.assert(title.includes(searchString));
+    console.assert(title.includes(searchString), "title should contain " + searchString + "!");
     await driver.quit();
 }
 
